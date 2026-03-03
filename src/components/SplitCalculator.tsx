@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { RotateCcw, ShoppingCart, Trash, Upload, Users, X, Download, FileJson } from "lucide-react";
+import { RotateCcw, ShoppingCart, Trash, Upload, Users, X, Download, File as FileJson } from "lucide-react";
 import { countries, exportDataAsJSON, type Item, type Person } from "@/lib";
 import { ApplyTax, InvoicePDF } from "@/components";
 

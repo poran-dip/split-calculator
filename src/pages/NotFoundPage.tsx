@@ -1,4 +1,4 @@
-import { Home, ArrowLeft } from "lucide-react";
+import { Hop as Home, ArrowLeft } from "lucide-react";
 
 const NotFound = () => {
   return (
