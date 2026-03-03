@@ -5,7 +5,7 @@ const App = () => {
   const [country, setCountry] = useState("india")
 
   return (
-    <div className="min-h-screen lg:h-screen flex flex-col bg-neutral-50 dark:bg-neutral-950">
+    <div className="min-h-screen lg:h-screen flex flex-col bg-slate-50 dark:bg-slate-950">
       <Navbar />
       <main className="grow lg:min-h-0 container mx-auto flex flex-col gap-3 p-3">
         <CountrySelect country={country} setCountry={setCountry} />

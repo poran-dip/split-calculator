@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { RotateCcw, ShoppingCart, Trash, Upload, Users, X, Download, File as FileJson } from "lucide-react";
+import { RotateCcw, ShoppingCart, Trash, Upload, Users, X, Download, FileJson } from "lucide-react";
 import { countries, exportDataAsJSON, type Item, type Person } from "@/lib";
 import { ApplyTax, InvoicePDF } from "@/components";
 
@@ -87,13 +87,13 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
   return (
     <div className="flex flex-col lg:flex-row gap-3 flex-1 lg:overflow-hidden">
       {/* Left Panel */}
-      <div className="lg:w-3/5 flex flex-col bg-white dark:bg-neutral-900 rounded border border-neutral-200 dark:border-neutral-800 lg:max-h-full lg:overflow-hidden">
-        <div className="border-b border-neutral-200 dark:border-neutral-800 px-4 py-3">
-          <h2 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">Items & People</h2>
+      <div className="lg:w-3/5 flex flex-col bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 lg:max-h-full lg:overflow-hidden">
+        <div className="border-b border-slate-200 dark:border-slate-800 px-4 py-3">
+          <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">Items & People</h2>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-2 px-4 py-3 border-b border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50">
+        <div className="flex flex-col sm:flex-row gap-2 px-4 py-3 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
           <div className="flex gap-2">
             <button
               className="flex items-center gap-1.5 px-3 py-1.5 bg-[hsl(194,100%,65%)] hover:bg-[hsl(194,100%,55%)] text-white text-sm rounded transition-colors"
@@ -113,7 +113,7 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
 
             <button
               onClick={handleReset}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-neutral-600 hover:bg-neutral-700 text-white text-sm rounded transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-colors"
             >
               <RotateCcw className="hidden sm:block" size={16} />
               Reset
@@ -160,9 +160,9 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
         <div className="overflow-y-auto lg:flex-1 p-4 space-y-3 lg:max-h-[calc(100vh-220px)]">
           {/* People Manager */}
           {showPeopleManager && (
-            <div className="p-3 bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded">
+            <div className="p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Manage People</h3>
+                <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Manage People</h3>
                 <div className="flex items-center gap-2">
                   <button
                     className="bg-[hsl(194,100%,65%)] hover:bg-[hsl(194,100%,55%)] text-white px-2.5 py-1 text-sm rounded transition-colors"
@@ -172,7 +172,7 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
                   </button>
                   <button
                     onClick={() => setShowPeopleManager(false)}
-                    className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200 p-1"
+                    className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 p-1"
                   >
                     <X size={16} />
                   </button>
@@ -182,7 +182,7 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
               <div className="space-y-2">
                 {people.map((person, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <span className="text-xs text-neutral-500 dark:text-neutral-400 w-6">{index + 1}.</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 w-6">{index + 1}.</span>
                     <input
                       type="text"
                       value={person.name}
@@ -192,11 +192,11 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
                         setPeople(newPeople);
                       }}
                       placeholder="Person name"
-                      className="flex-1 px-2 py-1.5 text-sm border bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 rounded focus:outline-none focus:ring-1 focus:ring-[hsl(194,100%,65%)]"
+                      className="flex-1 px-2 py-1.5 text-sm border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded focus:outline-none focus:ring-1 focus:ring-[hsl(194,100%,65%)]"
                     />
                     <button
                       onClick={() => setPeople(people.filter((_, i) => i !== index))}
-                      className="p-1.5 text-neutral-600 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 rounded transition-colors"
+                      className="p-1.5 text-slate-600 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 rounded transition-colors"
                     >
                       <Trash size={16} />
                     </button>
@@ -204,7 +204,7 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
                 ))}
 
                 {people.length === 0 && (
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 text-center py-2">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 text-center py-2">
                     No people added yet
                   </p>
                 )}
@@ -214,12 +214,12 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
 
           {/* Items List */}
           {items.map((item, index) => (
-            <div key={index} className="p-3 bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded">
+            <div key={index} className="p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded">
               <div className="flex items-start justify-between mb-2">
-                <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">Item {index + 1}</span>
+                <span className="text-xs font-medium text-slate-500 dark:text-slate-400">Item {index + 1}</span>
                 <button
                   onClick={() => setItems(items.filter((_, i) => i !== index))}
-                  className="p-1 text-neutral-600 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700 rounded transition-colors"
+                  className="p-1 text-slate-600 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 rounded transition-colors"
                 >
                   <Trash size={14} />
                 </button>
@@ -235,7 +235,7 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
                     setItems(newItems);
                   }}
                   placeholder="Item name"
-                  className="w-full px-2 py-1.5 text-sm border bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 rounded focus:outline-none focus:ring-1 focus:ring-[hsl(194,100%,65%)]"
+                  className="w-full px-2 py-1.5 text-sm border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded focus:outline-none focus:ring-1 focus:ring-[hsl(194,100%,65%)]"
                 />
 
                 <div className="grid grid-cols-2 gap-2">
@@ -249,7 +249,7 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
                     }}
                     placeholder={`Cost (${currency})`}
                     step="0.01"
-                    className="px-2 py-1.5 text-sm border bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 rounded focus:outline-none focus:ring-1 focus:ring-[hsl(194,100%,65%)]"
+                    className="px-2 py-1.5 text-sm border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded focus:outline-none focus:ring-1 focus:ring-[hsl(194,100%,65%)]"
                   />
 
                   <input
@@ -262,13 +262,13 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
                     }}
                     placeholder="Qty"
                     min="1"
-                    className="px-2 py-1.5 text-sm border bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 rounded focus:outline-none focus:ring-1 focus:ring-[hsl(194,100%,65%)]"
+                    className="px-2 py-1.5 text-sm border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded focus:outline-none focus:ring-1 focus:ring-[hsl(194,100%,65%)]"
                   />
                 </div>
 
                 {people.length > 0 && (
                   <div>
-                    <label className="block text-xs font-medium text-neutral-600 dark:text-neutral-400 mb-1">
+                    <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1">
                       Split among ({item.splitAmong.length} selected)
                     </label>
                     <div className="flex flex-wrap gap-1.5">
@@ -288,7 +288,7 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
                           className={`px-2 py-1 text-xs rounded transition-colors ${
                             item.splitAmong.includes(person.name)
                               ? 'bg-[hsl(194,100%,65%)] text-white'
-                              : 'bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-600'
+                              : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
                           }`}
                         >
                           {person.name || `Person ${personIndex + 1}`}
@@ -300,8 +300,8 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
               </div>
 
               {item.cost > 0 && item.quantity > 0 && (
-                <div className="text-xs text-neutral-600 dark:text-neutral-400 mt-2 pt-1 border-t border-neutral-200 dark:border-neutral-700">
-                  Subtotal: <span className="font-semibold text-neutral-900 dark:text-neutral-100">{currency}{(item.cost * item.quantity).toFixed(2)}</span>
+                <div className="text-xs text-slate-600 dark:text-slate-400 mt-2 pt-1 border-t border-slate-200 dark:border-slate-700">
+                  Subtotal: <span className="font-semibold text-slate-900 dark:text-slate-100">{currency}{(item.cost * item.quantity).toFixed(2)}</span>
                 </div>
               )}
             </div>
@@ -310,49 +310,49 @@ const SplitCalculator = ({ country }: SplitCalculatorProps) => {
       </div>
 
       {/* Right Panel */}
-      <div className="lg:w-2/5 flex flex-col bg-white dark:bg-neutral-900 rounded border border-neutral-200 dark:border-neutral-800 lg:max-h-full lg:overflow-hidden">
-        <div className="border-b border-neutral-200 dark:border-neutral-800 px-4 py-3">
-          <h2 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">Summary</h2>
+      <div className="lg:w-2/5 flex flex-col bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 lg:max-h-full lg:overflow-hidden">
+        <div className="border-b border-slate-200 dark:border-slate-800 px-4 py-3">
+          <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">Summary</h2>
         </div>
 
         <div className="flex-1 overflow-y-auto lg:max-h-[calc(100vh-220px)] p-4 space-y-3">
           {/* Cost Breakdown */}
-          <div className="p-3 bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded">
-            <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Costs</h3>
+          <div className="p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded">
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2">Costs</h3>
             <div className="space-y-1.5 text-sm">
               <div className="flex justify-between">
-                <span className="text-neutral-600 dark:text-neutral-400">Subtotal:</span>
-                <span className="font-medium text-neutral-900 dark:text-neutral-100">{currency}{subtotal.toFixed(2)}</span>
+                <span className="text-slate-600 dark:text-slate-400">Subtotal:</span>
+                <span className="font-medium text-slate-900 dark:text-slate-100">{currency}{subtotal.toFixed(2)}</span>
               </div>
               {taxApplied && (
                 <div className="flex justify-between">
-                  <span className="text-neutral-600 dark:text-neutral-400">Tax ({taxRate * 100}%):</span>
+                  <span className="text-slate-600 dark:text-slate-400">Tax ({taxRate * 100}%):</span>
                   <span className="font-medium text-[hsl(194,100%,65%)]">{currency}{taxAmount.toFixed(2)}</span>
                 </div>
               )}
-              <div className="flex justify-between pt-1.5 border-t border-neutral-200 dark:border-neutral-700">
-                <span className="font-semibold text-neutral-900 dark:text-neutral-100">Total:</span>
-                <span className="font-semibold text-neutral-900 dark:text-neutral-100">{currency}{total.toFixed(2)}</span>
+              <div className="flex justify-between pt-1.5 border-t border-slate-200 dark:border-slate-700">
+                <span className="font-semibold text-slate-900 dark:text-slate-100">Total:</span>
+                <span className="font-semibold text-slate-900 dark:text-slate-100">{currency}{total.toFixed(2)}</span>
               </div>
             </div>
           </div>
 
           {/* People's Share */}
-          <div className="p-3 bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 rounded">
-            <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Individual Shares</h3>
+          <div className="p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded">
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2">Individual Shares</h3>
             {peopleWithOwes.length > 0 && peopleWithOwes.some(p => p.name) ? (
               <div className="space-y-1.5 text-sm">
                 {peopleWithOwes.map((person, index) => (
                   person.name && (
                     <div key={index} className="flex justify-between">
-                      <span className="text-neutral-700 dark:text-neutral-300">{person.name}</span>
-                      <span className="font-medium text-neutral-900 dark:text-neutral-100">{currency}{person.owes.toFixed(2)}</span>
+                      <span className="text-slate-700 dark:text-slate-300">{person.name}</span>
+                      <span className="font-medium text-slate-900 dark:text-slate-100">{currency}{person.owes.toFixed(2)}</span>
                     </div>
                   )
                 ))}
               </div>
             ) : (
-              <p className="text-xs text-neutral-500 dark:text-neutral-400 text-center py-2">
+              <p className="text-xs text-slate-500 dark:text-slate-400 text-center py-2">
                 Add people and items to see shares
               </p>
             )}

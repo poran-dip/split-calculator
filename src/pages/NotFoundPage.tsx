@@ -1,13 +1,13 @@
-import { Hop as Home, ArrowLeft } from "lucide-react";
+import { Home, ArrowLeft } from "lucide-react";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-neutral-50 dark:bg-neutral-950 px-4">
-      <div className="max-w-md w-full bg-white dark:bg-neutral-900 rounded border border-neutral-200 dark:border-neutral-800 p-6 text-center">
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 px-4">
+      <div className="max-w-md w-full bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 p-6 text-center">
         <div className="mb-4">
-          <h1 className="text-6xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">404</h1>
-          <h2 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200 mb-1">Page Not Found</h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          <h1 className="text-6xl font-bold text-slate-900 dark:text-slate-100 mb-2">404</h1>
+          <h2 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-1">Page Not Found</h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400">
             The page you're looking for doesn't exist or has been moved.
           </p>
         </div>
@@ -22,7 +22,7 @@ const NotFound = () => {
           </a>
           <button
             onClick={() => window.history.back()}
-            className="flex items-center justify-center gap-2 px-4 py-2 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-900 dark:text-neutral-100 text-sm rounded transition-colors"
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 text-sm rounded transition-colors"
           >
             <ArrowLeft size={16} />
             Go Back
