@@ -7,12 +7,12 @@ interface CountrySelectProps {
 
 const CountrySelect = ({ country, setCountry }: CountrySelectProps) => {
   const selectedCountry = countries.find(c => c.code === country)
-  
+
   return (
     <div className="flex items-center gap-2">
-      <label 
-        htmlFor="country-select" 
-        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+      <label
+        htmlFor="country-select"
+        className="text-sm font-medium text-neutral-700 dark:text-neutral-300"
       >
         Country:
       </label>
@@ -20,9 +20,9 @@ const CountrySelect = ({ country, setCountry }: CountrySelectProps) => {
         <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2.5 text-base">
           {selectedCountry?.flag}
         </span>
-        <select 
+        <select
           id="country-select"
-          className="pl-9 pr-8 py-1.5 text-sm border bg-white dark:bg-slate-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none cursor-pointer"
+          className="pl-9 pr-8 py-1.5 text-sm border bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 rounded focus:outline-none focus:ring-1 focus:ring-[hsl(194,100%,65%)] appearance-none cursor-pointer"
           value={country}
           onChange={(e) => setCountry(e.target.value)}
         >
@@ -33,7 +33,7 @@ const CountrySelect = ({ country, setCountry }: CountrySelectProps) => {
           ))}
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-          <svg className="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+          <svg className="h-4 w-4 text-neutral-400" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
         </div>

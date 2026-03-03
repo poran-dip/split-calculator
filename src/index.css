@@ -11,29 +11,29 @@
 }
 
 .overflow-y-auto::-webkit-scrollbar-thumb {
-  background: rgba(156, 163, 175, 0.5);
+  background: hsl(194, 100%, 65%, 0.3);
   border-radius: 3px;
 }
 
 .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-  background: rgba(107, 114, 128, 0.7);
+  background: hsl(194, 100%, 65%, 0.5);
 }
 
 /* For dark mode */
 .dark .overflow-y-auto::-webkit-scrollbar-thumb {
-  background: rgba(75, 85, 99, 0.5);
+  background: hsl(194, 100%, 65%, 0.2);
 }
 
 .dark .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-  background: rgba(55, 65, 81, 0.7);
+  background: hsl(194, 100%, 65%, 0.4);
 }
 
 /* Firefox */
 .overflow-y-auto {
   scrollbar-width: thin;
-  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+  scrollbar-color: hsl(194, 100%, 65%, 0.3) transparent;
 }
 
 .dark .overflow-y-auto {
-  scrollbar-color: rgba(75, 85, 99, 0.5) transparent;
+  scrollbar-color: hsl(194, 100%, 65%, 0.2) transparent;
 }

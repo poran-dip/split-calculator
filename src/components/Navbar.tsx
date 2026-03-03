@@ -12,20 +12,20 @@ const Navbar = () => {
     } else {
       document.documentElement.classList.remove("dark")
     }
-    
+
     localStorage.setItem("theme", mode)
   }, [mode])
 
   return (
-    <nav className="w-full bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700">
+    <nav className="w-full bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
       <div className="container mx-auto px-4 py-2.5 flex justify-between items-center">
         <a className="flex items-center gap-2 group" href="/">
-          <Calculator className="h-5 w-5 text-green-600 dark:text-green-500" />
-          <span className="text-base font-semibold text-gray-900 dark:text-gray-100">Split Calculator</span>
+          <Calculator className="h-5 w-5 text-[hsl(194,100%,65%)]" />
+          <span className="text-base font-semibold text-neutral-900 dark:text-neutral-100">Split Calculator</span>
         </a>
         <button
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700 p-1.5 rounded transition-colors"
+          className="text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 p-1.5 rounded transition-colors"
           aria-label="Toggle theme"
         >
           {mode === "light" ? <Moon size={18} /> : <Sun size={18} />}
